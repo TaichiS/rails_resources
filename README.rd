@@ -1,3 +1,3 @@
 Rails Resources (zh-TW)
 
-locales (部份取自 ruby-taiwan)
+locales (carrierwave.zh-TW.yml 及 devise.zh-TW.yml 取自 ruby-taiwan)
