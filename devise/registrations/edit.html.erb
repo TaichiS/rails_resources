@@ -1,0 +1,29 @@
+<h2>編輯  <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>正在等候此 Email 的確認：<%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div><%= f.label :password %> <i>(若您不想變更，請保持空白)</i><br />
+  <%= f.password_field :password, :autocomplete => "off" %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.label :current_password %> <i>(請輸入您現在的密碼，來變更您的新密碼)</i><br />
+  <%= f.password_field :current_password %></div>
+
+  <div><%= f.submit "更新", :class => "btn" %></div>
+<% end %>
+
+<h3>取消我的帳號</h3>
+
+<p>您確定要 <%= button_to "取消帳號", registration_path(resource_name), :data => { :confirm => "確定取消？" }, :method => :delete %>？</p>
+
+<%= link_to "返回", :back %>
